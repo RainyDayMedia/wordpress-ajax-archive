@@ -8,7 +8,7 @@ _Note:_ This module does not make use of the traditional <select> box, but inste
 
 HTML
 
-```
+```html
 <div id="example-id" data-archive-type="example_post_type" data-category="example_category_slug">
 	<span id="current-selection">All</span>
 	<span class="right"><i class="fa fa-caret-down fa-lg"></i></span>
@@ -31,7 +31,7 @@ HTML
 
 Now, include an action and handler in your theme's function.php file
 
-```
+```php
 add_action( 'wp_ajax_archive_filter', 'exampleArchiveHandler');
 add_action( 'wp_ajax_nopriv_archive_filter', 'exampleArchiveHandler');
 
