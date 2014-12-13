@@ -29,6 +29,19 @@ HTML
 
 ```
 
+Enqueue your scripts in your theme's function.php file
+
+```php
+add_action( 'wp_enqueue_scripts', 'custom_scripts' );
+function devents_scripts()
+{
+	wp_enqueue_script( 'rdm-ajax-archive-script', get_template_directory_uri() . '/assets/js/dist/wp-ajax-archive.min.js', array(), '20121208', true );
+
+	// This line is of extreme importance. Without localizing this script, ajax will not work on your page.
+	wp_localize_script( 'rdm-ajax-archive-script', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' )));
+}
+```
+
 Now, include an action and handler in your theme's function.php file
 
 ```php
