@@ -1,7 +1,7 @@
 {
   "name": "wp-ajax-archive",
   "main": "wp-ajax-archive.js",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "authors": [
     "Todd Miller <todd@rainydaymedia.net>"
   ],
