@@ -33,7 +33,7 @@ Enqueue your scripts in your theme's function.php file
 
 ```php
 add_action( 'wp_enqueue_scripts', 'custom_scripts' );
-function devents_scripts()
+function custom_scripts()
 {
 	wp_enqueue_script( 'rdm-ajax-archive-script', get_template_directory_uri() . '/assets/js/dist/wp-ajax-archive.min.js', array(), '20121208', true );
 
@@ -65,11 +65,10 @@ function exampleArchiveHandler()
 	$posts = get_posts( $args );
 
 	foreach ( $posts as $post ) {
-		$output .= '
 
- 	// HTML for your archive items
-
-		';
+		// HTML for your archive items
+		$output .= '<div>Example</div>';
+		
 	}
 
 	wp_reset_postdata();
@@ -82,7 +81,6 @@ function exampleArchiveHandler()
 
 ### Author
 
-Rainy Day Media <hello@rainydaymedia.net>
 Todd Miller <todd@rainydaymedia.net>
 
 ### License
