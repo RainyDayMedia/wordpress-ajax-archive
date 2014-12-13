@@ -1,0 +1,31 @@
+{
+  "name": "wp-ajax-archive",
+  "main": "wp-ajax-archive.js",
+  "version": "0.1.0",
+  "authors": [
+    "Todd Miller <todd@rainydaymedia.net>"
+  ],
+  "description": "JQuery module for WordPress for display an ajax-powered archive",
+  "keywords": [
+    "ajax",
+    "wordpress",
+    "rainy",
+    "day",
+    "media",
+    "archive",
+    "gallery"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/RainyDayMedia/wp-ajax-archive",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  }
+}
