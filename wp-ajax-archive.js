@@ -1,9 +1,21 @@
+/**
+ * WordPress Ajax Archive
+ * JQuery module that builds an ajax supported gallery or archive.
+ *
+ * Author: Todd Miller <todd@rainydaymedia.net>
+ * Homepage: https://github.com/RainyDayMedia/wp-ajax-archive
+ * Repo: https://github.com/RainyDayMedia/wp-ajax-archive.git
+ * License: Copyright (c) <2014> <Rainy Day Media, LLC>
+ */
+
 var ajaxArchive = (function() {
 	var $archive    = null;
 	var $content    = null;
 	var archiveType = null;
 	var category  = null;
 
+	// initialize with the selector ID
+	// of the select box and selector ID of the content area
 	var init = function ( selectID, contentID ) {
 		$archive    = $( "#" + selectID);
 		$content    = $( "#" + contentID)
@@ -39,6 +51,7 @@ var ajaxArchive = (function() {
 		});
 	};
 
+	// public API
 	return {
 		init: init
 	};

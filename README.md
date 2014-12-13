@@ -4,6 +4,69 @@ JQuery module for WordPress that displays a gallery / archive with ajax support.
 
 ## Usage
 
+_Note:_ This module does not make use of the traditional <select> box, but instead uses a custom div selector box and a list. This gives you more options for styling your select boxes.
+
+HTML
+
+```
+<div id="example-id" data-archive-type="example_post_type" data-category="example_category_slug">
+	<span id="current-selection">All</span>
+	<span class="right"><i class="fa fa-caret-down fa-lg"></i></span>
+	<ul>
+		<li data-filter="0">All</li>
+		<li data-filter="term_id">Filter 1</li>
+		<li data-filter="term_id">Filter 2</li>
+		<li data-filter="term_id">Filter 3</li>
+		<li data-filter="term_id">Filter 4</li>
+	</ul>
+</div>
+
+<div id="example-content-id">
+
+</div>
+
+<script>ajaxArchive.init("example-id", "example-content-id");</script>
+
+```
+
+Now, include an action and handler in your theme's function.php file
+
+```
+add_action( 'wp_ajax_archive_filter', 'exampleArchiveHandler');
+add_action( 'wp_ajax_nopriv_archive_filter', 'exampleArchiveHandler');
+
+function exampleArchiveHandler()
+{
+	global $wpdb;
+
+	$filter      = $_POST['filter'];
+	$archiveType = $_POST['archiveType'];
+	$category    = $_POST['category'];
+	$taxonomy    = array();
+	$cat         = "example_taxonomy";
+
+	// Build your post query
+	$args = array();
+
+	$output = "";
+	$posts = get_posts( $args );
+
+	foreach ( $posts as $post ) {
+		$output .= '
+
+ 	// HTML for your archive items
+
+		';
+	}
+
+	wp_reset_postdata();
+
+	echo $output;
+	die();
+}
+```
+
+
 ### Author
 
 Rainy Day Media <hello@rainydaymedia.net>
